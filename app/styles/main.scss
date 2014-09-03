@@ -10,21 +10,12 @@ body {
   color: #333;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
+@mixin border {
+  border: solid 1px #5C5C5C;
 }
+
+// HEADER SECTION ##############################
+
 
 $yellow: #EFBB10;
 $base-accent-color: #EFBB10;
@@ -373,12 +364,96 @@ header.navigation {
   }
 }
 
+// END HEADER SECTION ##############################
+
+
+#midcontainer {
+  @include outer-container;
+  #progress {
+    @include span-columns (12);
+    @include border;
+    min-height: 800px;
+  }
+  // #score {
+  //   @include span-columns (3);
+  //   @include border;
+  //   min-height: 200px;
+  // }
+  
+}
 
 
 
+#steps {
+  @include outer-container;
+  @include border;
+  min-height: 400px;
+  .bullets {
+    $icon-bullet-size: 3.5em;
 
+    overflow: auto;
+    margin-bottom: $base-line-height;
 
+    // change ".three-col-bullet" class to this for two bullet layout
+    .two-col-bullet {
+      @include media($large-screen) {
+        @include span-columns(6);
+        @include omega(2n);  
+      } 
+    }
+    
+    .three-col-bullet {
+      @include media($large-screen) {
+        @include span-columns(4);
+        @include omega(3n);
+      }
+    }
 
+    // change ".three-col-bullet" class to this for four bullet layout
+    .four-col-bullet {
+      @include media($large-screen) {
+        @include span-columns(3);
+        @include omega(4n);
+      }
+    }
+
+    .bullet-icon {
+      float: left;
+      background: $base-accent-color;
+      padding: $icon-bullet-size /4;
+      border-radius: 50%;
+      width: $icon-bullet-size;
+      height: $icon-bullet-size;
+    }
+
+    .bullet-icon-1 {
+      background: $base-accent-color;
+    }
+
+    .bullet-icon-2 {
+      background: adjust-hue($base-accent-color, -50);
+    }
+
+    .bullet-icon-3 {
+      background: adjust-hue($base-accent-color, -140);
+    }
+
+    .bullet-content {
+      margin-left: $icon-bullet-size *1.4;
+      margin-bottom: 2em;
+    }
+
+    h2 {
+      font-size: $icon-bullet-size /2.5;
+      padding-top: $icon-bullet-size /7;
+      margin-bottom: $icon-bullet-size /6;
+      border-bottom: 1px solid transparentize($base-font-color, .8);
+      display: inline-block;
+    }
+  }
+}
+
+// FOOTER SECTION ##############################
 
 $base-spacing: 5px;
 $medium-screen: 800px;
@@ -462,4 +537,5 @@ $medium-screen: 800px;
   }
 }
 
+// END FOOTER SECTION ##############################
 
