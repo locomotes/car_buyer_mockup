@@ -17,7 +17,7 @@ body {
 // HEADER SECTION ##############################
 
 
-$yellow: #EFBB10;
+$yellow: #F9CA6B;
 $base-accent-color: #EFBB10;
 $sans-serif: sans-serif;
 $large-screen: 1200px;
@@ -25,7 +25,7 @@ $large-screen: 1200px;
 header.navigation {
   $navigation-padding: 1em;
   $navigation-background: $yellow;
-  $navigation-color: transparentize(white, 0.3);
+  $navigation-color: transparentize(#32262C, 0.3);
   $navigation-color-hover: white;
   $navigation-height: 60px;
   $navigation-nav-button-background: $base-accent-color;
@@ -364,21 +364,98 @@ header.navigation {
   }
 }
 
+
+
 // END HEADER SECTION ##############################
+
+
+// BEGIN MID SECTION ##############################
+
 
 
 #midcontainer {
   @include outer-container;
   #progress {
-    @include span-columns (12);
+    @include span-columns (9);
     @include border;
-    min-height: 800px;
+    min-height: 350px;
+    #progresstitle {
+      @include span-columns (12);
+      @include border;
+      min-height: 100px;
+    }
+    #progressbar {
+      @include span-columns (12);
+      @include border;
+      min-height: 55px;
+      margin: 0 auto;
+      // .steps {
+      //   @include span-columns (2);
+      //   @include border;
+      //   height: 55px;
+      //   background-color: #F7464A;
+      //   margin: 0px;
+      // }
+      .progress-bar-indication {
+        $progress-border-color: $base-border-color;
+        $progress-border: 1px solid $progress-border-color;
+        $progress-meter-border-color: $base-accent-color;
+        $progress-meter-border: 1px solid darken($progress-meter-border-color, 15%);
+        $progress-meter-color: $progress-meter-border-color;
+        $progress-background: darken($base-background-color, 5);
+        $progress-animation-duration: 0.7s;
+        $progress-color: white;
+
+        background-color: $progress-background;
+        border: $progress-border;
+        box-shadow: inset 0 0 3px 0 rgba(darken($progress-background, 50%), 0.15);
+        border-radius: $base-border-radius;
+        margin: 0 auto;
+        width: 80%;
+        border-radius: 25px;
+
+        > span.meter {
+          @include box-sizing(border-box);
+          background-color: $progress-meter-color;
+          background-size: 40px 40px;
+          background-repeat: repeat-x;
+          border: $progress-meter-border;
+          border-radius: $base-border-radius /1.5;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-top-left-radius: 25px;
+          border-bottom-left-radius: 25px;
+          display: block;
+          height: 40px;
+          width: 60%;
+        }
+
+        p {
+          margin-bottom: 0;
+          padding: .1em .5em;
+          font-weight: 800;
+          color: $progress-color;    
+          text-shadow: 0 0 1px black;
+        }
+      }
+    }
   }
-  // #score {
-  //   @include span-columns (3);
-  //   @include border;
-  //   min-height: 200px;
-  // }
+  #scorecontainer {
+    @include span-columns (3);
+    @include border;
+    min-height: 350px;
+    #scoretitle {
+      @include span-columns (12);
+      @include border;
+      min-height: 150px;
+    }
+    #score {
+      @include span-columns (12);
+      @include border;
+      min-height: 200px;
+      text-align: center;
+    }
+  }
   
 }
 
@@ -453,14 +530,22 @@ header.navigation {
   }
 }
 
-// FOOTER SECTION ##############################
+
+
+// BEGIN MID SECTION ##############################
+
+
+
+// FOOTER SECTION #################################
+
+
 
 $base-spacing: 5px;
 $medium-screen: 800px;
 
 .footer {
-  $footer-background: $base-accent-color;
-  $footer-color: white;
+  $footer-background: $yellow;
+  $footer-color: #32262C;
   $footer-link-color: transparentize($footer-color, .6);
   $footer-disclaimer-color: transparentize($footer-color, .6);
 
