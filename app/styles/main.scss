@@ -22,7 +22,9 @@ $base-accent-color: #EFBB10;
 $sans-serif: sans-serif;
 $large-screen: 1200px;
 $green: #46BFBD;
-$red: #F7464A; 
+$red: #F7464A;
+$purple: #827583;
+$blue: #05B2D2;
 
 header.navigation {
   $navigation-padding: 1em;
@@ -501,8 +503,9 @@ header.navigation {
 
 #steps {
   @include outer-container;
-  @include border;
+  // @include border;
   min-height: 400px;
+  padding-top: 80px;
   .bullets {
     $icon-bullet-size: 3.5em;
 
@@ -542,15 +545,15 @@ header.navigation {
     }
 
     .bullet-icon-1 {
-      background: $base-accent-color;
+      background: black,;
     }
 
     .bullet-icon-2 {
-      background: adjust-hue($base-accent-color, -50);
+      background: adjust-hue(black, -50);
     }
 
     .bullet-icon-3 {
-      background: adjust-hue($base-accent-color, -140);
+      background: adjust-hue(black, -140);
     }
 
     .bullet-content {
