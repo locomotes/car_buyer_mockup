@@ -21,6 +21,10 @@ $yellow: #F9CA6B;
 $base-accent-color: #EFBB10;
 $sans-serif: sans-serif;
 $large-screen: 1200px;
+$green: #46BFBD;
+$red: #F7464A;
+$purple: #827583;
+$blue: #05B2D2;
 
 header.navigation {
   $navigation-padding: 1em;
@@ -28,7 +32,7 @@ header.navigation {
   $navigation-color: transparentize(#32262C, 0.3);
   $navigation-color-hover: white;
   $navigation-height: 60px;
-  $navigation-nav-button-background: $base-accent-color;
+  $navigation-nav-button-background: darken($yellow, 5);
   $navigation-nav-button-background-hover: lighten($navigation-background, 10);
   $navigation-nav-button-border: 1px solid lighten($navigation-nav-button-background, 20);
   $navigation-search-background: lighten($navigation-background, 5);
@@ -377,16 +381,35 @@ header.navigation {
   @include outer-container;
   #progress {
     @include span-columns (9);
-    @include border;
+    // @include border;
     min-height: 350px;
+    text-align: center;
+    #userstatus {
+      @include span-columns (12);
+      // @include border; 
+      min-height: 75px;
+      .userstatus {
+        font-family: Montserrat;
+        font-size: 15px;
+        float: left;
+        margin-top: 22px;
+      }
+    }
     #progresstitle {
       @include span-columns (12);
-      @include border;
+      // @include border;
       min-height: 100px;
+      .progresstitle {
+        font-family: Montserrat;
+        font-size: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-top: 35px;
+      }
     }
     #progressbar {
       @include span-columns (12);
-      @include border;
+      // @include border;
       min-height: 55px;
       margin: 0 auto;
       // .steps {
@@ -397,16 +420,16 @@ header.navigation {
       //   margin: 0px;
       // }
       .progress-bar-indication {
-        $progress-border-color: $base-border-color;
-        $progress-border: 1px solid $progress-border-color;
+        $progress-border-color: $green;
+        $progress-border: 1px solid $green;
         $progress-meter-border-color: $base-accent-color;
-        $progress-meter-border: 1px solid darken($progress-meter-border-color, 15%);
-        $progress-meter-color: $progress-meter-border-color;
+        $progress-meter-border: 1px solid darken($green, 15%);
+        $progress-meter-color: $green;
         $progress-background: darken($base-background-color, 5);
         $progress-animation-duration: 0.7s;
         $progress-color: white;
 
-        background-color: $progress-background;
+        background-color: $red;
         border: $progress-border;
         box-shadow: inset 0 0 3px 0 rgba(darken($progress-background, 50%), 0.15);
         border-radius: $base-border-radius;
@@ -427,44 +450,62 @@ header.navigation {
           border-bottom-left-radius: 25px;
           display: block;
           height: 40px;
-          width: 60%;
+          width: 66%;
         }
 
-        p {
-          margin-bottom: 0;
-          padding: .1em .5em;
-          font-weight: 800;
-          color: $progress-color;    
-          text-shadow: 0 0 1px black;
-        }
+        // p {
+        //   margin-bottom: 0;
+        //   padding: .1em .5em;
+        //   font-weight: 800;
+        //   color: $progress-color;    
+        //   text-shadow: 0 0 1px black;
+        // }
       }
+    }
+    .progresspercentage {
+      font-family: Montserrat;
+      font-size: 65px;
+      // margin-top: 22px;
+      // font-weight: bold;
     }
   }
   #scorecontainer {
     @include span-columns (3);
-    @include border;
+    // @include border;
     min-height: 350px;
+    text-align: center;
     #scoretitle {
       @include span-columns (12);
-      @include border;
+      // @include border;
       min-height: 150px;
+      .scoretitle {
+        font-family: Montserrat;
+        font-size: 20px;
+        margin-top: 45px;
+      }
+      .buyerscore {
+        font-family: Montserrat;
+        font-size: 40px;
+        margin-top: 12px;
+        margin-bottom: 10px;
+      }
     }
     #score {
       @include span-columns (12);
-      @include border;
+      // @include border;
       min-height: 200px;
       text-align: center;
     }
   }
-  
 }
 
 
 
 #steps {
   @include outer-container;
-  @include border;
+  // @include border;
   min-height: 400px;
+  padding-top: 80px;
   .bullets {
     $icon-bullet-size: 3.5em;
 
@@ -504,15 +545,15 @@ header.navigation {
     }
 
     .bullet-icon-1 {
-      background: $base-accent-color;
+      background: black,;
     }
 
     .bullet-icon-2 {
-      background: adjust-hue($base-accent-color, -50);
+      background: adjust-hue(black, -50);
     }
 
     .bullet-icon-3 {
-      background: adjust-hue($base-accent-color, -140);
+      background: adjust-hue(black, -140);
     }
 
     .bullet-content {
@@ -532,7 +573,7 @@ header.navigation {
 
 
 
-// BEGIN MID SECTION ##############################
+// END MID SECTION ##############################
 
 
 
