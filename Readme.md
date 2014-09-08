@@ -1,3 +1,5 @@
-## Yo, I'm a Readme
+Progress page prototype for users of a car buying platform that directly connects automotive customers to dealerships. 
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
+Built with:
+Charts.js API,  jQuery, Javascript, Thoughbot Suite (Bourbon, Neat, and Refills), SCSS, SASS, CSS, HTML
+
